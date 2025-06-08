@@ -1,5 +1,23 @@
-import type { ReactNode } from 'react';
+export const tagMap = {
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  h4: 'h4',
+  p: 'p',
+  blockquote: 'blockquote',
+  ulList: 'ul',
+  olList: 'ol',
+  list_item: 'li',
+  'inline-code': 'code',
+  lead: 'p',
+} as const;
+
+export type TypographyElement = keyof typeof tagMap;
 
 export interface TypographyProps {
-  children: ReactNode;
+  as?: TypographyElement;
+  size?: 'large' | 'small' | 'subtle';
+  color?: 'white' | 'text';
+  children: React.ReactNode;
+  className?: string;
 }

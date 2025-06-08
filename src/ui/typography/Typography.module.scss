@@ -2,6 +2,119 @@
 
 .base {
   font-size: 1rem;
-  color: $color-text;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.color- {
+  &white {
+    color: $color-white;
+  }
+
+  &text {
+    color: $color-text;
+  }
+}
+
+.as- {
+  &h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 48px;
+    letter-spacing: -1.2%;
+  }
+
+  &h2 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: -1.75%;
+  }
+
+  &h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.6%;
+  }
+
+  &h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.6%;
+  }
+
+  &p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  &blockquote {
+    font-size: 16px;
+    line-height: 24px;
+    font-style: italic;
+
+    &::before {
+      content: '';
+      border: 2px solid $color-border;
+      width: 0;
+      height: auto;
+      margin-right: 28px;
+    }
+  }
+
+  &ulList {
+    list-style: disc;
+
+    &_item {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &olList {
+    list-style: decimal;
+
+    &_item {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &inline-code {
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 3px 4px;
+    border-radius: 3px;
+    background-color: $color-border;
+  }
+
+  &lead {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+
+.size- {
+  &large {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  &small {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+  }
+
+  &subtle {
+    color: $color-text-muted;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
 }
