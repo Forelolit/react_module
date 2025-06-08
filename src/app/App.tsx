@@ -21,7 +21,7 @@ function App() {
         <CustomButton variant="outline">Button</CustomButton>
       </div>
 
-      
+      <div>Check</div>
       <CustomInput type="text" />
     </div>
   );
