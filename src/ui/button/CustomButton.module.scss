@@ -1,33 +1,33 @@
 @use 'styles/_variables' as *;
 
 .base {
-    border: 2px solid $color-border;
-    border-radius: 8px;
-    padding: 10px 15px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
+  border: 2px solid $color-border;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
 
-    &:active {
-        transition: none;
-        transform: scale(0.98);
-    }
+  &:active {
+    transition: none;
+    transform: scale(0.98);
+  }
 }
 
 .primary {
-    color: $color-white;
-    background-color: $color-primary;
+  color: $color-white;
+  background-color: $color-primary;
 
-    &:hover {
-        background-color: $color-primary-hover;
-    }
+  &:hover {
+    background-color: $color-primary-hover;
+  }
 }
 
 .outline {
-    color: $color-text;
-    background-color: $color-white;
+  color: $color-text;
+  background-color: $color-white;
 
-    &:hover {
-        background-color: $color-bg;
-    }
+  &:hover {
+    background-color: $color-bg;
+  }
 }

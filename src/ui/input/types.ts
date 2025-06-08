@@ -1,5 +1,5 @@
 import type { HTMLInputTypeAttribute } from 'react';
 
 export interface CustomInputProps {
-    type: HTMLInputTypeAttribute;
+  type: HTMLInputTypeAttribute;
 }

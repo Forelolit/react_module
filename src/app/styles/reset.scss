@@ -1,27 +1,27 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%;
-    -moz-tab-size: 4;
-    tab-size: 4;
-    font-family: sans-serif;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-family: sans-serif;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 img,
@@ -32,10 +32,10 @@ audio,
 iframe,
 embed,
 object {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
 button,
@@ -43,17 +43,17 @@ input,
 optgroup,
 select,
 textarea {
-    font: inherit;
-    color: inherit;
-    margin: 0;
-    padding: 0;
-    background: none;
-    border: none;
-    outline: none;
+  font: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
 }
 
 :focus {
-    outline: none;
+  outline: none;
 }
 
 article,
@@ -67,18 +67,18 @@ figure,
 figcaption,
 details,
 summary {
-    display: block;
+  display: block;
 }
 
 button {
-    background: none;
-    border: none;
-    cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 h1,
@@ -90,10 +90,10 @@ h6,
 p,
 span,
 strong {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 b,
 strong {
-    font-weight: 500;
+  font-weight: 500;
 }
