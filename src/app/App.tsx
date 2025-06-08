@@ -1,6 +1,7 @@
-import './styles/global.scss';
+import 'styles/global.scss';
 import { CustomButton } from 'ui/button';
 import { CustomInput } from 'ui/input';
+import { Typography } from 'ui/typography';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
       </div>
 
       <CustomInput type="text" />
+
+      <Typography>some text</Typography>
     </div>
   );
 }
