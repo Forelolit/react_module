@@ -1,0 +1,9 @@
+@use 'styles/_variables' as *;
+
+.footer {
+  border-top: 2px solid $color-border;
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

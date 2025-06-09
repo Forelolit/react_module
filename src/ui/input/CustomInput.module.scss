@@ -19,3 +19,17 @@
     background-color: #f6f6f6;
   }
 }
+
+.cursor- {
+  &default {
+    cursor: default;
+  }
+
+  &pointer {
+    cursor: pointer;
+  }
+
+  &not-allowed {
+    cursor: not-allowed;
+  }
+}

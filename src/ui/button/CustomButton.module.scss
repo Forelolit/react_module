@@ -3,9 +3,6 @@
 .base {
   border: 2px solid $color-border;
   border-radius: 8px;
-  padding: 10px 15px;
-  font-size: 1rem;
-  cursor: pointer;
   transition: 0.3s;
 
   &:active {
@@ -14,20 +11,62 @@
   }
 }
 
-.primary {
-  color: $color-white;
-  background-color: $color-primary;
+.size- {
+  &small {
+    padding: 8px 12px;
+  }
 
-  &:hover {
-    background-color: $color-primary-hover;
+  &medium {
+    padding: 10px 15px;
+  }
+
+  &large {
+    padding: 12px 20px;
   }
 }
 
-.outline {
-  color: $color-text;
-  background-color: $color-white;
+.variant- {
+  &primary {
+    color: $color-white;
+    background-color: $color-primary;
+
+    &:hover {
+      background-color: $color-primary-hover;
+    }
+  }
+
+  &outline {
+    color: $color-text;
+    background-color: $color-white;
+
+    &:hover {
+      background-color: $color-bg;
+    }
+  }
+}
+
+.cursor- {
+  &default {
+    cursor: default;
+  }
+
+  &pointer {
+    cursor: pointer;
+  }
+
+  &not-allowed {
+    cursor: not-allowed;
+  }
+}
+
+.disabled {
+  background-color: #ccc;
 
   &:hover {
-    background-color: $color-bg;
+    background-color: #cccccccc;
+  }
+
+  &:active {
+    transform: none;
   }
 }

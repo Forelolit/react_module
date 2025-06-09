@@ -16,7 +16,7 @@ export const Typography: FC<TypographyProps> = ({
   return (
     <Element
       className={clsx(
-        styles[className],
+        className,
         styles.base,
         styles[`size-${size}`],
         styles[`as-${as}`],

@@ -1,0 +1,10 @@
+@use 'styles/_variables' as *;
+
+.header {
+  border-bottom: 2px solid $color-border;
+  padding: 20px 10px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

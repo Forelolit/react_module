@@ -8,9 +8,9 @@ export default defineConfig({
     alias: {
       pages: '/src/pages',
       modules: '/src/modules',
-      components: '/src/components',
       ui: '/src/ui',
       styles: '/src/app/styles',
+      types: '/src/types',
     },
   },
 });
