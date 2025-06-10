@@ -10,14 +10,14 @@ export const tagMap = {
   list_item: 'li',
   'inline-code': 'code',
   lead: 'p',
-} as const;
+} as const
 
-export type TypographyElement = keyof typeof tagMap;
+export type TypographyElement = keyof typeof tagMap
 
 export interface TypographyProps {
-  as?: TypographyElement;
-  size?: 'large' | 'small' | 'subtle';
-  color?: 'white' | 'text';
-  children: React.ReactNode;
-  className?: string;
+  as?: TypographyElement
+  size?: 'large' | 'medium' | 'small' | 'subtle'
+  color?: 'white' | 'text'
+  children: React.ReactNode
+  className?: string
 }

@@ -1,5 +1,3 @@
-@use 'styles/_variables' as *;
-
 .base {
   border: 2px solid $color-border;
   border-radius: 8px;
@@ -11,22 +9,22 @@
   }
 }
 
-.size- {
-  &small {
+.size {
+  &Small {
     padding: 8px 12px;
   }
 
-  &medium {
+  &Medium {
     padding: 10px 15px;
   }
 
-  &large {
+  &Large {
     padding: 12px 20px;
   }
 }
 
-.variant- {
-  &primary {
+.variant {
+  &Primary {
     color: $color-white;
     background-color: $color-primary;
 
@@ -35,7 +33,7 @@
     }
   }
 
-  &outline {
+  &Outline {
     color: $color-text;
     background-color: $color-white;
 
@@ -45,16 +43,16 @@
   }
 }
 
-.cursor- {
-  &default {
+.cursor {
+  &Default {
     cursor: default;
   }
 
-  &pointer {
+  &Pointer {
     cursor: pointer;
   }
 
-  &not-allowed {
+  &NotAllowed {
     cursor: not-allowed;
   }
 }

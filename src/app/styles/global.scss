@@ -1,4 +1,4 @@
-@use 'styles/_variables' as *;
+@use './reset.scss';
 
 body {
   background-color: $color-bg;

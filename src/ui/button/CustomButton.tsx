@@ -1,8 +1,9 @@
-import type { FC } from 'react';
-import clsx from 'clsx';
+import type { FC } from 'react'
+import clsx from 'clsx'
+import { capitalize } from '@utils/capitalize'
 
-import styles from './CustomButton.module.scss';
-import type { CustomButtonProps } from './types';
+import styles from './CustomButton.module.scss'
+import type { CustomButtonProps } from './types'
 
 export const CustomButton: FC<CustomButtonProps> = ({
   children,
@@ -21,14 +22,14 @@ export const CustomButton: FC<CustomButtonProps> = ({
       className={clsx(
         className,
         styles.base,
-        styles[`variant-${variant}`],
-        styles[`cursor-${cursor}`],
-        styles[`size-${size}`],
+        styles[`variant${capitalize(variant)}`],
+        styles[`cursor${capitalize(cursor)}`],
+        styles[`size${capitalize(size)}`],
         disabled && styles.disabled,
       )}
       type={type}
     >
       {children}
     </button>
-  );
-};
+  )
+}

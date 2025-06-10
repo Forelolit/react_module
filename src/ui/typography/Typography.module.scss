@@ -1,55 +1,53 @@
-@use 'styles/_variables' as *;
-
 .base {
   font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.color- {
-  &white {
+.color {
+  &White {
     color: $color-white;
   }
 
-  &text {
+  &Text {
     color: $color-text;
   }
 }
 
-.as- {
-  &h1 {
+.as {
+  &H1 {
     font-size: 48px;
     font-weight: 800;
     line-height: 48px;
     letter-spacing: -1.2%;
   }
 
-  &h2 {
+  &H2 {
     font-size: 30px;
     font-weight: 600;
     line-height: 36px;
     letter-spacing: -1.75%;
   }
 
-  &h3 {
+  &H3 {
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
     letter-spacing: -0.6%;
   }
 
-  &h4 {
+  &H4 {
     font-size: 20px;
     font-weight: 600;
     line-height: 28px;
     letter-spacing: -0.6%;
   }
 
-  &p {
+  &P {
     font-size: 16px;
     line-height: 28px;
   }
 
-  &blockquote {
+  &Blockquote {
     font-size: 16px;
     line-height: 24px;
     font-style: italic;
@@ -63,25 +61,25 @@
     }
   }
 
-  &ulList {
+  &UlList {
     list-style: disc;
 
-    &_item {
+    &Item {
       font-size: 16px;
       line-height: 24px;
     }
   }
 
-  &olList {
+  &OlList {
     list-style: decimal;
 
-    &_item {
+    &Item {
       font-size: 16px;
       line-height: 24px;
     }
   }
 
-  &inline-code {
+  &InlineCode {
     font-family: monospace;
     font-size: 14px;
     font-weight: 700;
@@ -91,27 +89,33 @@
     background-color: $color-border;
   }
 
-  &lead {
+  &Lead {
     font-size: 20px;
     font-weight: 400;
     line-height: 20px;
   }
 }
 
-.size- {
-  &large {
+.size {
+  &Large {
     font-size: 18px;
     font-weight: 600;
     line-height: 28px;
   }
 
-  &small {
+  &Medium {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 14px;
+  }
+
+  &Small {
     font-size: 14px;
     font-weight: 500;
     line-height: 14px;
   }
 
-  &subtle {
+  &Subtle {
     color: $color-text-muted;
     font-size: 14px;
     font-weight: 400;

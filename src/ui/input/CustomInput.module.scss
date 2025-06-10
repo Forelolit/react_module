@@ -1,5 +1,3 @@
-@use 'styles/_variables' as *;
-
 .base {
   border: 2px solid $color-border;
   border-radius: 10px;
@@ -20,16 +18,16 @@
   }
 }
 
-.cursor- {
-  &default {
+.cursor {
+  &Default {
     cursor: default;
   }
 
-  &pointer {
+  &Pointer {
     cursor: pointer;
   }
 
-  &not-allowed {
+  &NotAllowed {
     cursor: not-allowed;
   }
 }

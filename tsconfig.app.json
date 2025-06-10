@@ -25,11 +25,12 @@
     /* Aliases */
     "baseUrl": "src",
     "paths": {
-      "pages/*": ["pages/*"],
-      "modules/*": ["modules/*"],
-      "ui/*": ["ui/*"],
-      "styles/*": ["styles/*"],
-      "types/*": ["types/*"]
+      "@app/*": ["app/*"],
+      "@pages/*": ["pages/*"],
+      "@modules/*": ["modules/*"],
+      "@ui/*": ["ui/*"],
+      "@types/*": ["types/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["src"]

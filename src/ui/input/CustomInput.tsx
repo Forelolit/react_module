@@ -1,25 +1,26 @@
-import { useState } from 'react';
-import clsx from 'clsx';
+import { useState } from 'react'
+import clsx from 'clsx'
+import { capitalize } from '@utils/capitalize'
 
-import styles from './CustomInput.module.scss';
-import type { CustomInputProps } from './types';
+import styles from './CustomInput.module.scss'
+import type { CustomInputProps } from './types'
 
 export const CustomInput = ({
   type,
   placeholder,
   disabled,
-  cursor,
+  cursor = 'pointer',
 }: CustomInputProps) => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('')
 
   return (
     <input
       type={type}
-      className={clsx(styles.base, styles[`cursor-${cursor}`])}
+      className={clsx(styles.base, styles[`cursor${capitalize(cursor)}`])}
       value={value}
       onChange={(e) => setValue(e.target.value)}
       placeholder={placeholder}
       disabled={disabled}
     />
-  );
-};
+  )
+}
