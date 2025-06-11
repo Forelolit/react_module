@@ -1,32 +1,59 @@
-import { Typography } from '@ui/typography'
-import { useQuery } from '@tanstack/react-query'
-import { CustomInput } from '@ui/input'
+import { Typography } from '@ui/typography';
+import { useQueries, useQuery, type UseQueryResult } from '@tanstack/react-query';
+import { Card } from '@ui/card';
+import type { FC } from 'react';
 
-import { getAllPokemons } from '../api/getAllPokemons'
+import type { PokemonDetail, PokemonListResponse } from '../types/types';
+import { getAllPokemons, getPokemonDetails } from '../api/getAllPokemons';
 
-import styles from './PokemonList.module.scss'
+import styles from './PokemonList.module.scss';
 
-export const PokemonList = () => {
-  const { isPending, error, data } = useQuery({
-    queryKey: ['pokemon'],
+export const PokemonList: FC = () => {
+  const {
+    data: listData,
+    isLoading,
+    isError,
+  } = useQuery<PokemonListResponse>({
+    queryKey: ['pokemon-data'],
     queryFn: getAllPokemons,
-  })
+  });
 
-  if (isPending) return 'Loading...'
+  const pokemonQueries: UseQueryResult<PokemonDetail>[] = useQueries({
+    queries: (listData?.results ?? []).map((item) => ({
+      queryKey: ['pokemon-detail', item.name],
+      queryFn: () => getPokemonDetails(item.url),
+      enabled: !!item.url,
+    })),
+  });
 
-  if (error) return 'An error has occurred: ' + error.message
+  if (isLoading) return <p>Загрузка списка покемонов...</p>;
+  if (isError) return <p>Ошибка при получении списка</p>;
+
+  const isAnyLoading = pokemonQueries.some((q) => q.isLoading);
+  const isAnyError = pokemonQueries.some((q) => q.isError);
+
+  if (isAnyLoading) return <p>Загрузка данных о покемонах...</p>;
+  if (isAnyError) return <p>Ошибка при загрузке деталей покемона</p>;
+
+  const pokemons = pokemonQueries.map((q) => q.data!).filter(Boolean);
 
   return (
     <>
-      <Typography as="h2">Pokemon list</Typography>
-      <CustomInput type="text" placeholder="Enter text" />
+      <Typography as="h2" className={styles.title}>
+        Pokemon list
+      </Typography>
+
       <Typography as="ulList">
-        {data.results.map((pokemon) => (
-          <Typography as="list_item" key={pokemon.name}>
-            <div className={styles.base}>{pokemon.name}</div>
+        {pokemons.map((pokemon) => (
+          <Typography as="list_item" key={pokemon.id} className={styles.base}>
+            <Card
+              name={pokemon.name}
+              image={pokemon.sprites.front_default}
+              imageAlt={pokemon.name}
+            ></Card>
           </Typography>
         ))}
       </Typography>
     </>
-  )
-}
+  );
+};

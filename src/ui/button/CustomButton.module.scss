@@ -41,6 +41,15 @@
       background-color: $color-bg;
     }
   }
+
+  &Accent {
+    color: $color-text;
+    background-color: $color-accent;
+
+    &:hover {
+      background-color: $color-accent-hover;
+    }
+  }
 }
 
 .cursor {
