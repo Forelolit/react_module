@@ -1,9 +1,10 @@
-import { useState } from 'react'
-import clsx from 'clsx'
-import { capitalize } from '@utils/capitalize'
+import { useState } from 'react';
+import clsx from 'clsx';
+import { capitalize } from '@utils/capitalize';
 
-import styles from './CustomInput.module.scss'
-import type { CustomInputProps } from './types'
+import type { CustomInputProps } from '../types';
+
+import styles from './CustomInput.module.scss';
 
 export const CustomInput = ({
   type,
@@ -11,7 +12,7 @@ export const CustomInput = ({
   disabled,
   cursor = 'pointer',
 }: CustomInputProps) => {
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState('');
 
   return (
     <input
@@ -22,5 +23,5 @@ export const CustomInput = ({
       placeholder={placeholder}
       disabled={disabled}
     />
-  )
-}
+  );
+};

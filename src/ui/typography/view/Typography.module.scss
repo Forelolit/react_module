@@ -122,3 +122,9 @@
     line-height: 20px;
   }
 }
+
+.listStyle {
+  &None {
+    list-style: none;
+  }
+}

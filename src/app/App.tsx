@@ -1,8 +1,8 @@
-import '@app/styles/global.scss'
+import '@app/styles/global.scss';
 
-import { Home } from '@pages/index'
+import { Home } from '@pages/index';
 
-import { AppLayout } from './layout'
+import { AppLayout } from './layout';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Home />
       </AppLayout>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

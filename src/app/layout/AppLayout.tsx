@@ -1,5 +1,5 @@
-import { Footer } from '@modules/footer'
-import { Header } from '@modules/header'
+import { Footer } from '@modules/footer';
+import { Header } from '@modules/header';
 
 export const AppLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -8,5 +8,5 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
       <main>{children}</main>
       <Footer />
     </>
-  )
-}
+  );
+};

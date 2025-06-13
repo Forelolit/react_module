@@ -3,3 +3,14 @@
 body {
   background-color: $color-bg;
 }
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  overflow-y: auto;
+}

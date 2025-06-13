@@ -1,5 +1,12 @@
-.base:not(:last-of-type) {
-  margin-bottom: 10px;
+.base {
+  width: 180px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .title {

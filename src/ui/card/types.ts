@@ -1,7 +1,7 @@
 export interface CardProps {
   className?: string;
   name?: string;
-  children?: string;
+  children?: React.ReactNode;
   image?: string;
   imageAlt?: string;
 }

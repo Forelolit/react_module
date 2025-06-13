@@ -1,5 +1,5 @@
-import { HeroBlock, PokemonList } from '@modules/main-module'
-import { Container } from '@ui/container'
+import { HeroBlock, PokemonList } from '@modules/main-module';
+import { Container } from '@ui/container';
 
 export const Home = () => {
   return (
@@ -9,5 +9,5 @@ export const Home = () => {
         <PokemonList />
       </Container>
     </>
-  )
-}
+  );
+};

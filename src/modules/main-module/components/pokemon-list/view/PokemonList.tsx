@@ -1,14 +1,37 @@
 import { Typography } from '@ui/typography';
 import { useQueries, useQuery, type UseQueryResult } from '@tanstack/react-query';
 import { Card } from '@ui/card';
-import type { FC } from 'react';
+import { useEffect, useState, type FC } from 'react';
+import { CustomButton } from '@ui/button';
+import clsx from 'clsx';
 
 import type { PokemonDetail, PokemonListResponse } from '../types/types';
 import { getAllPokemons, getPokemonDetails } from '../api/getAllPokemons';
+import { PokemonInfoModal } from '../components/pokemonInfoModal';
 
 import styles from './PokemonList.module.scss';
 
 export const PokemonList: FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const layout = document.getElementById('root');
+    if (!layout) return;
+
+    if (isOpen) {
+      layout.style.overflowY = 'hidden';
+      document.documentElement.style.scrollbarGutter = 'stable';
+    } else {
+      layout.style.overflowY = 'auto';
+      document.documentElement.style.scrollbarGutter = '';
+    }
+
+    return () => {
+      layout.style.overflowY = 'auto';
+      document.documentElement.style.scrollbarGutter = '';
+    };
+  }, [isOpen]);
+
   const {
     data: listData,
     isLoading,
@@ -43,17 +66,20 @@ export const PokemonList: FC = () => {
         Pokemon list
       </Typography>
 
-      <Typography as="ulList">
+      <Typography as="ulList" listStyle="none" className={clsx(styles.flex)}>
         {pokemons.map((pokemon) => (
-          <Typography as="list_item" key={pokemon.id} className={styles.base}>
-            <Card
-              name={pokemon.name}
-              image={pokemon.sprites.front_default}
-              imageAlt={pokemon.name}
-            ></Card>
+          <Typography as="list_item" key={pokemon.id} className={clsx(styles.base)}>
+            <Card name={pokemon.name} image={pokemon.sprites.front_default} imageAlt={pokemon.name}>
+              <CustomButton size="large" variant="accent" onClick={() => setIsOpen(true)}>
+                <Typography color="white">Info</Typography>
+              </CustomButton>
+            </Card>
           </Typography>
         ))}
       </Typography>
+      <PokemonInfoModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <Typography color="white">text</Typography>
+      </PokemonInfoModal>
     </>
   );
 };

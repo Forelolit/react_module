@@ -1,0 +1,24 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalOverlay {
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.modalContent {
+  background-color: $color-secondary;
+  border-radius: 20px;
+  width: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+}
