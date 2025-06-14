@@ -1,0 +1,14 @@
+.list {
+  gap: 15px;
+
+  @include flexbox();
+}
+
+.link {
+  transition: 0.2s;
+
+  &:hover {
+    text-decoration: underline;
+    color: $color-primary-hover;
+  }
+}

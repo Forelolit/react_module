@@ -12,6 +12,7 @@ export default defineConfig({
       '@ui': '/src/ui',
       '@types': '/src/types',
       '@utils': '/src/utils',
+      '@assets': '/src/assets',
     },
   },
   css: {

@@ -3,11 +3,11 @@ import { CustomButton } from '@ui/button';
 import { Typography } from '@ui/typography';
 import ReactDOM from 'react-dom';
 
-import type { PokemonInfoModalProps } from '../types/types';
+import type { ModalProps } from '../types';
 
-import styles from './pokemonInfoModal.module.scss';
+import styles from './Modal.module.scss';
 
-export const PokemonInfoModal: FC<PokemonInfoModalProps> = ({ isOpen, onClose, children }) => {
+export const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
   return ReactDOM.createPortal(
     <div className={styles.modal}>

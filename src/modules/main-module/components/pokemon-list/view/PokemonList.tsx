@@ -4,10 +4,10 @@ import { Card } from '@ui/card';
 import { useEffect, useState, type FC } from 'react';
 import { CustomButton } from '@ui/button';
 import clsx from 'clsx';
+import { Modal } from '@ui/modal';
 
 import type { PokemonDetail, PokemonListResponse } from '../types/types';
 import { getAllPokemons, getPokemonDetails } from '../api/getAllPokemons';
-import { PokemonInfoModal } from '../components/pokemonInfoModal';
 
 import styles from './PokemonList.module.scss';
 
@@ -70,16 +70,16 @@ export const PokemonList: FC = () => {
         {pokemons.map((pokemon) => (
           <Typography as="list_item" key={pokemon.id} className={clsx(styles.base)}>
             <Card name={pokemon.name} image={pokemon.sprites.front_default} imageAlt={pokemon.name}>
-              <CustomButton size="large" variant="accent" onClick={() => setIsOpen(true)}>
+              <CustomButton size="large" onClick={() => setIsOpen(true)}>
                 <Typography color="white">Info</Typography>
               </CustomButton>
             </Card>
           </Typography>
         ))}
       </Typography>
-      <PokemonInfoModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <Typography color="white">text</Typography>
-      </PokemonInfoModal>
+      </Modal>
     </>
   );
 };
