@@ -13,4 +13,6 @@ body {
 #root {
   height: 100vh;
   overflow-y: auto;
+  will-change: transform;
+  contain: layout paint;
 }

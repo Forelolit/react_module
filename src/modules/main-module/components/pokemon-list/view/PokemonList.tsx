@@ -1,47 +1,28 @@
 import { Typography } from '@ui/typography';
-import { useQueries, useQuery, type UseQueryResult } from '@tanstack/react-query';
+import { useQueries, useQuery } from '@tanstack/react-query';
 import { Card } from '@ui/card';
-import { useEffect, useState, type FC } from 'react';
+import { useState, type FC, useMemo } from 'react';
 import { CustomButton } from '@ui/button';
-import clsx from 'clsx';
+import { useScrollbarHide } from '@utils/hooks/useScrollbarHide';
 import { Modal } from '@ui/modal';
+import clsx from 'clsx';
 
 import type { PokemonDetail, PokemonListResponse } from '../types/types';
-import { getAllPokemons, getPokemonDetails } from '../api/getAllPokemons';
+import { getAllPokemons } from '../api/getAllPokemons';
+import { getPokemonDetails } from '../api/getPokemonDetails';
 
 import styles from './PokemonList.module.scss';
 
 export const PokemonList: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [selectedPokemon, setSelectedPokemon] = useState<PokemonDetail | null>(null);
+  const { isOpen, setIsOpen } = useScrollbarHide();
 
-  useEffect(() => {
-    const layout = document.getElementById('root');
-    if (!layout) return;
-
-    if (isOpen) {
-      layout.style.overflowY = 'hidden';
-      document.documentElement.style.scrollbarGutter = 'stable';
-    } else {
-      layout.style.overflowY = 'auto';
-      document.documentElement.style.scrollbarGutter = '';
-    }
-
-    return () => {
-      layout.style.overflowY = 'auto';
-      document.documentElement.style.scrollbarGutter = '';
-    };
-  }, [isOpen]);
-
-  const {
-    data: listData,
-    isLoading,
-    isError,
-  } = useQuery<PokemonListResponse>({
+  const { data: listData } = useQuery<PokemonListResponse>({
     queryKey: ['pokemon-data'],
     queryFn: getAllPokemons,
   });
 
-  const pokemonQueries: UseQueryResult<PokemonDetail>[] = useQueries({
+  const pokemonQueries = useQueries({
     queries: (listData?.results ?? []).map((item) => ({
       queryKey: ['pokemon-detail', item.name],
       queryFn: () => getPokemonDetails(item.url),
@@ -49,16 +30,15 @@ export const PokemonList: FC = () => {
     })),
   });
 
-  if (isLoading) return <p>Загрузка списка покемонов...</p>;
-  if (isError) return <p>Ошибка при получении списка</p>;
+  const pokemons = useMemo(
+    () => pokemonQueries.map((q) => q.data).filter(Boolean) as PokemonDetail[],
+    [pokemonQueries],
+  );
 
-  const isAnyLoading = pokemonQueries.some((q) => q.isLoading);
-  const isAnyError = pokemonQueries.some((q) => q.isError);
-
-  if (isAnyLoading) return <p>Загрузка данных о покемонах...</p>;
-  if (isAnyError) return <p>Ошибка при загрузке деталей покемона</p>;
-
-  const pokemons = pokemonQueries.map((q) => q.data!).filter(Boolean);
+  const handleOpenModal = (pokemon: PokemonDetail) => {
+    setSelectedPokemon(pokemon);
+    setIsOpen(true);
+  };
 
   return (
     <>
@@ -70,15 +50,29 @@ export const PokemonList: FC = () => {
         {pokemons.map((pokemon) => (
           <Typography as="list_item" key={pokemon.id} className={clsx(styles.base)}>
             <Card name={pokemon.name} image={pokemon.sprites.front_default} imageAlt={pokemon.name}>
-              <CustomButton size="large" onClick={() => setIsOpen(true)}>
+              <CustomButton size="large" onClick={() => handleOpenModal(pokemon)}>
                 <Typography color="white">Info</Typography>
               </CustomButton>
             </Card>
           </Typography>
         ))}
       </Typography>
+
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <Typography color="white">text</Typography>
+        {selectedPokemon && (
+          <div className={styles.modalContent}>
+            <img src={selectedPokemon.sprites.front_default} alt={selectedPokemon.name} />
+            <Typography as="h3" color="white">
+              {selectedPokemon.name}
+            </Typography>
+            <Typography color="white">
+              Height: {selectedPokemon.height}, Weight: {selectedPokemon.weight}
+            </Typography>
+            <Typography color="white">
+              Types: {selectedPokemon.types.map((t) => t.type.name).join(', ')}
+            </Typography>
+          </div>
+        )}
       </Modal>
     </>
   );

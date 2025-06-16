@@ -17,8 +17,19 @@ export interface PokemonSprites {
   };
 }
 
+export interface PokemonType {
+  slot: number;
+  type: {
+    name: string;
+    url: string;
+  };
+}
+
 export interface PokemonDetail {
   id: number;
   name: string;
   sprites: PokemonSprites;
+  height: number;
+  weight: number;
+  types: PokemonType[];
 }
