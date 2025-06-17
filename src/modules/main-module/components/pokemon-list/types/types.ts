@@ -1,8 +1,13 @@
+export interface Pokemon {
+  name: string;
+  url: string;
+}
+
 export interface PokemonListResponse {
-  results: {
-    name: string;
-    url: string;
-  }[];
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: Pokemon[];
 }
 
 export interface PokemonSprites {

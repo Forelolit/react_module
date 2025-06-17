@@ -2,7 +2,7 @@ import { CustomButton } from '@ui/button';
 import { Typography } from '@ui/typography';
 
 import sound from '../audio/sound.mp3';
-import image from '../image/image1.jpg';
+import image from '../image/image1.webp';
 
 import styles from './HeroBlock.module.scss';
 

@@ -2,7 +2,7 @@ import { Typography } from '@ui/typography';
 import { CustomInput } from '@ui/input';
 import { CustomButton } from '@ui/button';
 
-import image from '../image/image.jpg';
+import image from '../image/image.webp';
 
 import styles from './MainBlock.module.scss';
 

@@ -1,14 +1,43 @@
 .base {
-  width: 180px;
+  width: 230px;
 }
 
 .flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
+
+  @include flexbox();
 }
 
 .title {
   margin-bottom: 20px;
+}
+
+.wrapper {
+  gap: 10px;
+  padding-bottom: 15px;
+
+  @include flexbox($justify: space-between, $align: start);
+}
+
+.imageWrapper {
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border: 1px solid $color-border;
+  border-radius: 1rem;
+
+  @include flexbox();
+}
+
+.textWrapper {
+  gap: 10px;
+
+  @include flexbox($direction: column);
+}
+
+.textBlock {
+  border: 1px solid $color-border;
+  border-radius: 1rem;
+  padding: 15px 20px;
 }
