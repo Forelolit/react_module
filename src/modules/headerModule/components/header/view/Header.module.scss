@@ -1,0 +1,14 @@
+.header {
+  border-bottom: 2px solid $color-border;
+  padding: 15px 10px;
+  margin-bottom: 40px;
+}
+
+.content {
+  @include flexbox($justify: space-between);
+}
+
+.flex {
+  gap: 20px;
+  @include flexbox();
+}

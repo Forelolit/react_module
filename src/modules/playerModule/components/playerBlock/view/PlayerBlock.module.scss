@@ -1,0 +1,11 @@
+.playerBlock {
+  height: 100vh;
+}
+
+.title {
+  margin-bottom: 40px;
+}
+
+.playerWrapper {
+  @include flexbox();
+}

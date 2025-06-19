@@ -60,6 +60,15 @@
     }
   }
 
+  &Link {
+    transition: 0.2s;
+
+    &:hover {
+      text-decoration: underline;
+      color: $color-primary-hover;
+    }
+  }
+
   &UlList {
     list-style: disc;
 

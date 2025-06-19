@@ -1,0 +1,38 @@
+{
+  "navLink": {
+    "home": "Home",
+    "about": "About us",
+    "player": "Player"
+  },
+  "footer": {
+    "text": "Made with the support of Aki"
+  },
+  "placeholder": {
+    "search": "Search",
+    "enterEmail": "Enter email"
+  },
+  "buttons": {
+    "click": "Click me 😊",
+    "info": "Info",
+    "close": "Close",
+    "contactUs": "Contact us"
+  },
+  "loader": {
+    "loading": "Loading..."
+  },
+  "titles": {
+    "pokemonList": "Pokemon list",
+    "heroBlock0": "Hero block",
+    "heroBlock1": "This is hero block!",
+    "mainBlock0": "This is main block!",
+    "mainBlock1": "Connect your email to know the latest news!"
+  },
+  "description": {
+    "mainDesciption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim earum voluptatum tenetur vitae maiores laudantium sed sunt adipisci magni, eos assumenda sapiente cumque vel architecto? Eaque soluta quisquam voluptate unde?"
+  },
+  "stats": {
+    "height": "Height:",
+    "weight": "Weight:",
+    "types": "Types:"
+  }
+}

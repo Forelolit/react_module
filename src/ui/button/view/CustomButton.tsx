@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import clsx from 'clsx';
 import { capitalize } from '@utils/strings/capitalize';
 
-import type { CustomButtonProps } from '../types';
+import type { CustomButtonProps } from '../types/types';
 
 import styles from './CustomButton.module.scss';
 

@@ -1,0 +1,5 @@
+.list {
+  gap: 15px;
+
+  @include flexbox();
+}

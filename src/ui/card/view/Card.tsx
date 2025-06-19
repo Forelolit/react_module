@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { Typography } from '@ui/typography';
 import { CustomImage } from '@ui/customImage';
 
-import type { CardProps } from '../types';
+import type { CardProps } from '../types/types';
 
 import styles from './Card.module.scss';
 

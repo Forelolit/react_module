@@ -1,0 +1,15 @@
+.heroBlock {
+  height: 100vh;
+}
+
+.content {
+  gap: 10px;
+
+  @include flexbox($justify: space-between, $align: start);
+}
+
+.imageWrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 65%;
+}

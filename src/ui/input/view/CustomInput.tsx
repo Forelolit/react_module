@@ -2,7 +2,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 import { capitalize } from '@utils/strings/capitalize';
 
-import type { CustomInputProps } from '../types';
+import type { CustomInputProps } from '../types/types';
 
 import styles from './CustomInput.module.scss';
 

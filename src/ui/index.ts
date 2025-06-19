@@ -1,7 +1,7 @@
-export { CustomButton } from './button';
-export { CustomInput } from './input';
-export { Typography } from './typography';
-export { Container } from './container';
-export { Card } from './card/';
-export { Modal } from './modal';
-export { CustomImage } from './customImage';
+export { CustomButton } from './button/view/CustomButton';
+export { CustomInput } from './input/view/CustomInput';
+export { Typography } from './typography/view/Typography';
+export { Container } from './container/view/Container';
+export { Card } from './card/view/Card';
+export { Modal } from './modal/view/Modal';
+export { CustomImage } from './customImage/view/CustomImage';

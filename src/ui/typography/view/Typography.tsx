@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import clsx from 'clsx';
 import { capitalize } from '@utils/strings/capitalize';
 
-import { tagMap, type TypographyProps } from '../types';
+import { tagMap, type TypographyProps } from '../types/types';
 
 import styles from './Typography.module.scss';
 

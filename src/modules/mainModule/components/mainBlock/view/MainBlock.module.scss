@@ -1,0 +1,47 @@
+.mainBlock {
+  height: 100vh;
+}
+
+.content {
+  margin-bottom: 40px;
+
+  @include flexbox($justify: space-between, $direction: row-reverse);
+}
+
+.imageWrapper {
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.titleBlock {
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 1rem;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.contactsBlock {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  border-radius: 1rem;
+}
+
+.emailContent {
+  border: 2px solid $color-border;
+  border-radius: 1rem;
+  padding: 20px;
+  text-align: center;
+}
+
+.input {
+  gap: 8px;
+
+  @include flexbox();
+}
+
+.contactsText {
+  margin-bottom: 15px;
+}
