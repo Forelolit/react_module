@@ -1,0 +1,49 @@
+.select {
+  background-color: $color-white;
+  border: 2px solid $color-border;
+  border-radius: 5px;
+  padding: 5px 6px;
+  position: relative;
+  cursor: pointer;
+}
+
+.selectName {
+  border-bottom: 1px solid $color-text;
+}
+
+.optionsList {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  border: 2px solid $color-border;
+  border-radius: 5px;
+  background-color: $color-white;
+  overflow: hidden;
+  min-width: 100%;
+  text-align: center;
+
+  & * {
+    transition: 0.2s;
+    padding: 2px;
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-primary-hover;
+    }
+  }
+}
+
+.flex {
+  @include flexbox();
+}
+
+.arrow {
+  width: 20px;
+  transform: rotate(-90deg);
+  transition: 0.3s;
+}
+
+.arrowRotate {
+  width: 20px;
+  transform: rotate(450deg);
+}

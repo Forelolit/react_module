@@ -1,23 +1,15 @@
+import { CustomSelect } from '@ui/index';
 import { languages } from '@utils/constants/constants';
 import { useTranslation } from 'react-i18next';
 
 export const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
-  return (
-    <select
-      name="lngSelect"
-      id="lngSelect"
-      value={i18n.language}
-      onChange={(e) => i18n.changeLanguage(e.target.value)}
-    >
-      {languages.map(({ label, value }) => (
-        <option value={value} key={value}>
-          {label}
-        </option>
-      ))}
-    </select>
-  );
-};
+  const handleLangChange = (val: string) => {
+    i18n.changeLanguage(val);
+  };
 
-//TODO сделать custom ui для select
+  const options = languages.map(({ label, value }) => ({ label, value }));
+
+  return <CustomSelect value={i18n.language} onChange={handleLangChange} options={options} />;
+};

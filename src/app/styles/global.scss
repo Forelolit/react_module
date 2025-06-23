@@ -1,5 +1,9 @@
 @use './reset.scss';
 
+html {
+  font-family: inter, sans-serif, arial, helvetica;
+}
+
 body {
   background-color: $color-bg;
 }
@@ -15,4 +19,11 @@ body {
   overflow-y: auto;
   will-change: transform;
   contain: layout paint;
+}
+
+@font-face {
+  font-family: 'inter';
+  src: url('/src/assets/fonts/inter.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

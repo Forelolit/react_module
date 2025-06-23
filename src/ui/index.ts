@@ -5,3 +5,4 @@ export { Container } from './container/view/Container';
 export { Card } from './card/view/Card';
 export { Modal } from './modal/view/Modal';
 export { CustomImage } from './customImage/view/CustomImage';
+export { CustomSelect } from './select/view/CustomSelect';

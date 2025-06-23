@@ -8,20 +8,19 @@ import styles from './CustomInput.module.scss';
 
 export const CustomInput = ({
   type,
-  placeholder,
-  disabled,
   cursor = 'pointer',
+  className = '',
+  ...rest
 }: CustomInputProps) => {
   const [value, setValue] = useState('');
 
   return (
     <input
       type={type}
-      className={clsx(styles.base, styles[`cursor${capitalize(cursor)}`])}
+      className={clsx(className, styles.base, styles[`cursor${capitalize(cursor)}`])}
       value={value}
       onChange={(e) => setValue(e.target.value)}
-      placeholder={placeholder}
-      disabled={disabled}
+      {...rest}
     />
   );
 };

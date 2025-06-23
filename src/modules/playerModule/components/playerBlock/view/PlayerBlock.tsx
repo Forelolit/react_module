@@ -1,9 +1,11 @@
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/youtube';
 import { Typography } from '@ui/index';
 
 import styles from './PlayerBlock.module.scss';
 
 export const PlayerBlock = () => {
+  const video = 'https://www.youtube.com/watch?v=FoSgDtqb0Zc';
+
   return (
     <div className={styles.playerBlock}>
       <div>
@@ -11,12 +13,7 @@ export const PlayerBlock = () => {
           React player
         </Typography>
         <div className={styles.playerWrapper}>
-          <ReactPlayer
-            url="https://www.youtube.com/watch?v=-afmD1rsXE4"
-            width="100%"
-            height="100%"
-            controls
-          />
+          <ReactPlayer url={video} width="80%" height="80%" controls light />
         </div>
       </div>
     </div>
